@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Wyśrodkowanie całego kontenera */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(204, 94, 94);
+    margin: 0;
+    cursor: url('gwiazda.png'), auto;
+}
+
+
+section {
+    width: 600px; 
+    height: 400px; 
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(204, 94, 94, 0.2); 
+    display: flex;
+    flex-direction: column;  /* Układ pionowy */
+    justify-content: center; /* Wyśrodkowanie treści */
+    align-items: center;     
+    border-radius: 10px;  
+    font-size: 20px; 
+    padding: 20px;
+}
+
+h3 {
+    font-family: cursive;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 80px; /* Większy odstęp od przycisków */
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Rozstawienie przycisków */
+    width: 80%; /* Dostosowanie szerokości */
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(204, 94, 94);
+    color: white;
+    cursor: url('serce.png'), auto;
+    transition: 0.3s;
+}
+
+
+#kk1 , #kk2 , #kk3 , #zmw,  #zz , #zmw2{
+    display: none;
+}
+
+.nie {
+    background-color: white;
+    color: rgb(180, 80, 80);
+    border: 1px rgb(180, 80, 80) solid;
+}
+
+
+.duzo {
+    font-size: 30px;
+}
+
+/* 🌟 Zmiana tła na białe po kliknięciu */
+.white-background {
+    background-color: white !important;
+    transition: background 1s ease-in-out;
+}
+
+/* 🌑 Zmiana tła na czarne po kilku sekundach */
+.black-background {
+    background-color: black !important;
+    transition: background 2s ease-in-out;
+}
+
+/* ❤️ Duże pulsujące serce w tle */
+.background-heart {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    font-size: 180px; /* Większe serce */
+    transform: translate(-50%, -50%);
+    color: red;
+    text-shadow: 0 0 30px rgba(255, 0, 0, 0.8), 0 0 60px rgba(255, 0, 0, 0.6);
+    animation: heartbeat 1s infinite alternate ease-in-out, floating 3s infinite ease-in-out;
+}
+
+/* 📜 Tekst na środku i bardziej widoczny */
+.big-message {
+    position: fixed;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 42px;
+    font-weight: bold;
+    font-family: cursive;
+    color: red;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in-out, glow 1.5s infinite alternate ease-in-out;
+}
+
+/* ❤️ Animacja pulsowania serca */
+@keyframes heartbeat {
+    from {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+/* 💖 Animacja delikatnego unoszenia się serca */
+@keyframes floating {
+    from {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    to {
+        transform: translate(-50%, -50%) translateY(-15px);
+    }
+}
+
+/* 🌧️ Spadające napisy */
+.falling-text {
+    position: absolute;
+    font-size: 24px;
+    font-family: cursive;
+    color: white;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+#zdjeciesad {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+/* ❤️ Serduszka lecące za kursorem (grafika) */
+.cursor-heart {
+    position: absolute;
+    width: 25px; /* Możesz dostosować rozmiar */
+    height: 25px;
+    pointer-events: none;
+    animation: floatUp 1s linear forwards;
+    opacity: 1;
+}
+
+/* ✨ Animacja unoszenia serduszek */
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* 🔹 Responsywność dla telefonów */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* Ułożenie w pionie */
+        justify-content: flex-start;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    section {
+        width: 90%; /* Zmniejszenie szerokości */
+        height: auto;
+        padding: 15px;
+    }
+
+    h3 {
+        font-size: 30px; /* Zmniejszenie nagłówków */
+        margin-bottom: 40px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Przyciski pod sobą */
+        align-items: center;
+        width: 100%;
+    }
+
+    button {
+        width: 80%;
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+
+    /* ❤️ Responsywne serce */
+    .background-heart {
+        font-size: 120px; /* Zmniejszenie serca */
+    }
+
+    /* 📜 Responsywny tekst */
+    .big-message {
+        font-size: 28px;
+        width: 90%;
+    }
+
+    /* 🌧️ Spadające napisy dostosowane do małego ekranu */
+    .falling-text {
+        font-size: 18px;
+    }
+    body, h3, p, button {
+    font-family: 'Sour Gummy', cursive;
+    }
+}
