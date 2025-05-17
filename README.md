@@ -18,9 +18,6 @@ A sweet, responsive website designed as a personal, heartfelt gesture — simple
 - Google Fonts — for smooth and elegant typography 
 - Favicon + meta tags — for polish and shareability
 
-## 🏗️ How I built this project
-
-Built as a personal digital note, this project was created to be a modern take on the classic love letter. Instead of paper, the message is immortalized as a URL. The goal was emotional impact over technical complexity.
 
 ## 🖼️ UI/UX Design
 
